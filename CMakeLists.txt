@@ -8,6 +8,10 @@ project(coredumper C CXX)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
+# Set options to ON by default
+set(BUILD_SHARED_LIBS ON CACHE BOOL "Build coredumper libs as shared libs")
+set(BUILD_TESTING ON CACHE BOOL "Build tests for coredumper")
+
 set(COREDUMPER_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_subdirectory(src)
